@@ -1,0 +1,103 @@
+/* :host {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+mat-card {
+  width: 350px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+}
+
+mat-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+mat-card-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+mat-card-content p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+} */
+
+
+/* Container */
+.movie-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 20px;
+  justify-content: center;
+}
+
+/* Movie Card */
+.movie-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image */
+.movie-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Content */
+.movie-card .content {
+  padding: 12px;
+}
+
+.movie-card .content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #1f2937;
+}
+
+.movie-card .content p {
+  font-size: 14px;
+  color: #555;
+  margin: 2px 0;
+}
+
+/* Button */
+.movie-card button {
+  margin-top: 10px;
+  background-color: #4f46e5;
+  color: white;
+  padding: 6px 12px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.movie-card button:hover {
+  background-color: #4338ca;
+}
