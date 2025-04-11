@@ -1,15 +1,15 @@
-<!-- Filters Section -->
+<!-- Filters Section
 <div class="filter-section">
-  <!-- Location Filter -->
+  
   <select [(ngModel)]="selectedLocation" (change)="filterMovies()">
     <option value="">Select Location</option>
     <option *ngFor="let loc of locations" [value]="loc">{{ loc }}</option>
   </select>
-</div>
+</div> -->
 
 
 
-<!-- Only show movies if filteredMovies has data -->
+<!-- 
 <div *ngIf="filteredMovies.length > 0" class="movie-container">
   <div *ngFor="let movie of filteredMovies" class="movie-card">
     <img [src]="movie.image" alt="{{ movie.title }}">
@@ -26,7 +26,39 @@
   </div>
 </div>
 
-<!-- If filters are not all selected -->
 <div *ngIf="filteredMovies.length === 0 && selectedLocation " class="text-center text-gray-500 mt-6">
   No movies match your filters.
+</div> -->
+
+
+
+<!-- Filters Section -->
+<div class="filter-section">
+  <!-- Location Filter -->
+  <select [(ngModel)]="selectedLocation" (change)="filterMovies()">
+    <option value="">Select Location</option>
+    <option *ngFor="let loc of locations" [value]="loc">{{ loc }}</option>
+  </select>
 </div>
+
+<!-- Show movies if filteredMovies has data -->
+<div *ngIf="filteredMovies.length > 0" class="movie-container">
+  <div *ngFor="let movie of filteredMovies" class="movie-card">
+    <img [src]="movie.image" alt="{{ movie.title }}">
+    <div class="content">
+      <!-- Clickable movie title to view full details -->
+      <h3>
+        <a [routerLink]="['/movies', movie.id]" class="movie-title-link">
+          {{ movie.title }}
+        </a>
+      </h3>
+      <p>⭐ {{ movie.rating }}</p>
+    </div>
+  </div>
+</div>
+
+<!-- If no matching movies -->
+<div *ngIf="filteredMovies.length === 0 && selectedLocation" class="text-center text-gray-500 mt-6">
+  No movies match your filters.
+</div>
+

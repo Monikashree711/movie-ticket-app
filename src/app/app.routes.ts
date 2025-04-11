@@ -10,4 +10,5 @@ export const routes: Routes = [
       import('./components/movie-details/movie-details.component').then(m => m.MovieDetailsComponent)
   }
   
+  
 ];

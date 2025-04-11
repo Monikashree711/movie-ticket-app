@@ -1,18 +1,21 @@
-<mat-card *ngIf="movie">
-  <img mat-card-image [src]="movie.image" [alt]="movie.title" />
+<div class="movie-detail-card" *ngIf="movie">
+  <img [src]="movie.image" [alt]="movie.title">
 
-  <mat-card-title>{{ movie.title }}</mat-card-title>
-
-  <mat-card-content>
+  <div class="movie-detail-content">
+    <h2>{{ movie.title }}</h2>
     <p><strong>Genre:</strong> {{ movie.genre }}</p>
     <p><strong>Duration:</strong> {{ movie.duration }} mins</p>
-    <p><strong>Ratings:</strong> {{ movie.rating }}/10</p>
-    <p><strong>Showtime:</strong> {{ movie.showtime | date:'short' }}</p>
-  </mat-card-content>
+    <p><strong>Rating:</strong> ⭐ {{ movie.rating }}/10</p>
+    <p><strong>Language:</strong> {{ movie.language }}</p>
+    <p><strong>Theater:</strong> {{ movie.theater }}</p>
+    <p><strong>Location:</strong> {{ movie.location }}</p>
+    <p><strong>Showtime:</strong> {{ movie.showtime | date: 'short' }}</p>
+  </div>
 
-  <mat-card-actions>
+  <div class="movie-detail-actions">
     <a [routerLink]="['/movies', movie.id, 'book']">
-      <button mat-raised-button color="primary">Book Tickets</button>
+      <button>Book Tickets</button>
     </a>
-  </mat-card-actions>
-</mat-card>
+  </div>
+</div>
+
