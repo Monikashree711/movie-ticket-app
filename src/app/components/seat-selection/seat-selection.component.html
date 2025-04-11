@@ -1,1 +1,31 @@
-<p>seat-selection works!</p>
+<div class="seat-selection-container" *ngIf="movie">
+    <h2>{{ movie.title }} - Seat Selection</h2>
+  
+    <!-- Screen Label -->
+    <div class="screen">Screen This Way</div>
+  
+    <!-- Seat Layout -->
+    <div class="seats">
+      <div *ngFor="let row of seatLayout" class="seat-row">
+        <div class="seat-label">{{ row.row }}</div>
+        <button
+          *ngFor="let seat of row.seats"
+          [ngClass]="{
+            'seat': true,
+            'booked': seat.booked,
+            'selected': isSelected(seat.id)
+          }"
+          (click)="toggleSeat(seat)">
+          {{ seat.id }}
+        </button>
+      </div>
+    </div>
+  
+    <!-- Confirm Button -->
+    <div class="actions" *ngIf="selectedSeats.length > 0">
+      <p>You selected: {{ selectedSeats.join(', ') }}</p>
+      <button class="confirm-btn" (click)="confirmBooking()">Confirm Booking</button>
+    </div>
+  </div>
+  
+  
