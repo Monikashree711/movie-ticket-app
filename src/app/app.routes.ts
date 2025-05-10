@@ -8,6 +8,11 @@ export const routes: Routes = [
     path: 'movies/:id',
     loadComponent: () =>
       import('./components/movie-details/movie-details.component').then(m => m.MovieDetailsComponent)
+  },
+  {
+    path: 'movies/:id/book',
+    loadComponent: () =>
+      import('./components/seat-selection/seat-selection.component').then(m => m.SeatSelectionComponent)
   }
-  
 ];
+
